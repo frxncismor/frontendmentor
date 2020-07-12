@@ -19,6 +19,10 @@ ul {
     padding: 0;
 }
 
+/* nav */
+nav ul li a:hover {
+    color: var(--third-color);
+}
 /* header */
 
 header {
@@ -68,7 +72,9 @@ main ul li a{
     display: block;
     color: var(--third-color);
 }
-
+main ul li a:hover{
+    color: var(--secondary-color)
+}
 main ul li figure {
     width: 50%;
     margin: 0 auto;
