@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap');
 /* variables */
 :root{
     --primary-color: hsl(217, 19%, 35%);
@@ -94,8 +95,8 @@ main {
 .card-content--share{
     display: grid;
     place-self: center;
-    width: 25px;
-    height: 25px;
+    width: 32px;
+    height: 32px;
     background: var(--background-color);
     border-radius: 50%;
     /* border: 1px solid red; */
@@ -130,4 +131,151 @@ main {
 footer{
     display: grid;
     grid-template-columns: 70% 30%;
+}
+.popup{
+    display: none;
+    background-color: var(--primary-color);
+    position: absolute;
+    right: -12px;
+    width: 230px;
+    top: -35px;
+}
+
+.popup-content::after{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 49%;
+    margin-left: -5px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: var(--primary-color) transparent transparent transparent;
+}
+
+.popup-content{
+    padding: 10px;
+    margin: 0%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--primary-color);
+    position: absolute;
+    top: -27px;
+    left: 34px;
+    border-radius: 5px;
+    height: 30px;
+}
+
+.show{
+    display: inline-block;
+}
+
+.icon{
+    width: 15px;
+    height: 13px;
+    background-size: cover;
+}
+.share-icon{
+    background-image: url('/article_preview_component/images/icon-share.svg');
+}
+.selected{
+    background-color: var(--secondary-color);
+}
+.selected-icon{
+    filter: brightness(0) invert(1);
+}
+.popup span{
+    text-transform: uppercase;
+    color: white;
+    font-weight: 200;
+    opacity: .7;
+    letter-spacing: 5px;
+}
+
+.popup-content-social{
+    display: inline-flex;
+    width: 50%;
+    justify-content: space-around
+}
+
+.popup-content-title{
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+}
+
+.relative{
+    position: relative;
+}
+
+@media screen and (max-width: 600px){
+    h2{
+        font-size: 11pt;
+    }
+    .card{
+        display: block;
+        margin: 0 auto;
+        width: 400px;
+        position: relative;
+    }
+    .card-img{
+        border-radius: 10px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    .card-content{
+        border-bottom-left-radius: 10px;
+        padding: 25px;
+    }
+    .card-content--share{
+        position: inherit;
+        z-index: 1;
+    }
+    .card-author{
+        justify-content: center;
+        padding-bottom: 12px;
+    }
+    .card-author figure{
+        margin-right: 15px;
+    }
+    .icon{
+        width: 15px;
+        height: 12px;
+        padding-bottom: 3px;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .show{
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    footer{
+        width: 400px;
+        padding-left: -15px;
+        margin-left: -25px;
+        margin-bottom: -25px;
+    }
+    .popup-content{
+        padding: 0;
+        top: 0;
+        height: unset;
+        height: 100%;
+        left: 0;
+        width: 70%;
+    }
+    .relative{
+        /* position: absolute; */
+        /* bottom: 0;
+        left: 0 */
+    }
+
+    .popup-content::after{
+        content: none;
+    }
 }
