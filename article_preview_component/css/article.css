@@ -73,6 +73,7 @@ main {
     margin: 0;
     width: 400px;
     overflow: hidden;
+    border-radius: 10px;
 }
 .card-img img{
     width: 100%;
